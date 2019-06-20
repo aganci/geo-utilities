@@ -17,9 +17,8 @@ RSpec.describe 'geo_utilities:find_highest_cities' do
       $stdout = original_stdout
     end
     
-    it "should output the highest cities" do
-      string_io = StringIO.new
-      $stdout = string_io
+    xit "should output the highest cities" do
+      $stdout = StringIO.new
 
       invoke_rake_task  
 
@@ -36,7 +35,7 @@ RSpec.describe 'geo_utilities:find_highest_cities' do
       File.delete(file_name) if File.exists?(file_name)
     end
 
-    it "should output the highest cities" do
+    xit "should output the highest cities" do
       invoke_rake_task  
 
       expect(File.exists?(file_name)).to be(true)

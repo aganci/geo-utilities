@@ -3,8 +3,6 @@ require_relative('../lib/city_database')
 require_relative('../lib/city')
 
 RSpec.describe "city database" do
-
-
   it "should load the file and call process for each city" do
     database = CityDatabase.new(file_fixture("test_cities.csv").realpath)
     processor = TestCityProcessor.new

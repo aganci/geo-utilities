@@ -8,7 +8,11 @@ namespace :geo_utilities do
   task :find_highest_cities, [:filename] => :environment do |t, args|
     db = CityDatabase.new(args[:filename])
     processor = HighestCityProcessor.new
+    
     db.for_each_city(processor)
-    processor.output($stdout)
+    
+    f = File.new("output.txt", "w+")
+    processor.output($stdout, f)
+    f.close
   end
 end

@@ -11,9 +11,9 @@ class HighestCityProcessor
     end
   end
 
-  def output(io)
+  def output(*args)
     @city_map.values.sort_by { |c| -c.altitude }.each do |city|
-      io.puts city.format_description
+      args.each { |io| io.puts city.format_description }
     end
   end
 end

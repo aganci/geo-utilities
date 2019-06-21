@@ -32,4 +32,15 @@ RSpec.describe "highest city processor" do
 
     expect(string_io.string).to eq("1808m - Kabul, Afghanistan\n108m - Milano, Italy\n")
   end
+
+  it "should output to multiple targets" do
+    another_io = StringIO.new
+
+    processor.process(City.new("Rome", "Italy", 14.0))
+
+    processor.output(string_io, another_io)
+
+    expect(string_io.string).to eq("14m - Rome, Italy\n")
+    expect(another_io.string).to eq("14m - Rome, Italy\n")
+  end
 end

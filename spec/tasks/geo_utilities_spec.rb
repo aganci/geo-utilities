@@ -17,7 +17,7 @@ RSpec.describe 'geo_utilities:find_highest_cities' do
       $stdout = original_stdout
     end
     
-    xit "should output the highest cities" do
+    it "should output the highest cities" do
       $stdout = StringIO.new
 
       invoke_rake_task  

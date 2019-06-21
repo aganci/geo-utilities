@@ -9,7 +9,7 @@ namespace :geo_utilities do
     db = CityDatabase.new(args[:filename])
     processor = HighestCityProcessor.new
     
-    db.for_each_city(processor)
+    db.foreach_city(processor)
     
     f = File.new("output.txt", "w+")
     processor.output($stdout, f)

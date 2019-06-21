@@ -7,7 +7,7 @@ RSpec.describe "city database" do
     database = CityDatabase.new(file_fixture("test_cities.csv").realpath)
     processor = TestCityProcessor.new
 
-    database.for_each_city(processor)
+    database.foreach_city(processor)
 
     expect(processor.cities).to eq(
       [City.new("Rome", "Italy", 14.0), City.new("Milano", "Italy", 108.0)])

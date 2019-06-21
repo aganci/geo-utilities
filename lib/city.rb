@@ -1,14 +1,14 @@
 class City
-  attr_reader :altitude
+  attr_reader :name, :country, :altitude
 
   def initialize(city_name, country, altitude)
-    @city_name = city_name
+    @name = city_name
     @country = country
     @altitude = altitude
   end
 
   def format_description
-    "#{altitude.round}m - #{@city_name}, #{@country}"
+    "#{altitude.round}m - #{name}, #{country}"
   end
 
   def higher_than(city)
@@ -22,6 +22,6 @@ class City
   protected
 
   def state
-    [@city_name, @country, altitude]
+    [name, country, altitude]
   end  
 end

@@ -6,10 +6,6 @@ RSpec.describe 'geo_utilities:find_highest_cities' do
   let(:highest_city_output) {"4824m - Santa Barbara, Bolivia"}
   let(:expected_city_count) {155}
 
-  before do
-    Rake::Task.define_task(:environment)
-  end
-
   describe 'output to stdout' do
     let!(:original_stdout) { $stdout }
 

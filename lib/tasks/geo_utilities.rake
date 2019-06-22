@@ -5,7 +5,7 @@ require_relative '../highest_city_processor'
 namespace :geo_utilities do
 
   desc "read a csv file and output the highest city for each country to stdout and a text file named output.txt"
-  task :find_highest_cities, [:filename] => :environment do |t, args|
+  task :find_highest_cities, :filename do |t, args|
     db = CityDatabase.new(args[:filename])
     processor = HighestCityProcessor.new
     
